@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Mona+Sans:ital,wdth,wght@0,104.7,470;1,104.7,470&display=swap');
+
+/*===== VARIABLES CSS =====*/
+:root {
+    --dark-color-lighten: #eaeaea;
+    --red-card: rgba(102, 0, 0, 0.699);
+    --btn: #240000;
+    --btn-hover: #ffffff;
+    --text: #d3b9b9;
+}
+
+/*===== RESET =====*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Mona Sans', sans-serif;
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+    background-color: #000000;
+    color: rgb(255, 246, 246);
+}
+
+.container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    gap: 15px;
+}
+
+.card {
+    position: relative;
+    border: 3px solid #3a0101;
+    background-color: var(--red-card);
+    width: 47%;
+    height: 470px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 47px;
+    overflow: hidden;
+    padding: 27px;
+}
+
+.product_image img {
+    max-width: 100%;
+    height: auto;
+}
+
+.product-info {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    z-index: 2;
+}
+
+.titulo {
+    font-size: 35px;
+    font-weight: 700;
+}
+
+.descripcion {
+    font-size: 14px;
+}
+
+.price {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.btn {
+    display: flex;
+    gap: 10px;
+    z-index: 2;
+
+}
+
+.buy {
+    background-color: var(--btn);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    z-index: 3;
+}
+
+
+.buy:hover {
+    background-color: var(--btn-hover);
+    color: #000;
+}
+
+
+.fav {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    color: var(--text);
+    z-index: 3;
+}
+
+.contentsvg {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    bottom: -500px;
+    transition: cubic-bezier(0.4, 0, 0.2, 1) 0.6s;
+    z-index: 1;
+}
+
+.cuadros {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    transition: cubic-bezier(0.4, 0, 0.2, 1) 0.6s;
+    z-index: 1;
+}
+
+.card:hover .contentsvg {
+    bottom: -100px;
+}
+
+.card:hover .cuadros {
+    transform: rotate(37deg) rotateX(5deg) rotateY(12deg) skew(2deg) skewY(1deg) scaleX(1.2) scaleY(1.2);
+}
+
+@media (max-width: 576px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .card {
+        width: 100%;
+    }
+}
